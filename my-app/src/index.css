@@ -1,0 +1,99 @@
+/* src/index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-darkGray antialiased;
+}
+
+.section-anchor {
+  display: block;
+  position: relative;
+  top: -80px; 
+  visibility: hidden;
+}
+
+
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.text-shadow {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+}
+
+ */
+
+
+ /* src/index.css OR src/App.css (wherever Shadcn put the variables) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Teal & Indigo Theme */
+    --background: 0 0% 98%; /* Very light gray, almost white */
+    --foreground: 240 10% 3.9%; /* Dark gray, near black */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 175 75% 45%; /* Teal */
+    --primary-foreground: 180 100% 10%; /* Darker teal for text on primary */
+
+    --secondary: 220 70% 55%; /* Indigo/Deep Blue */
+    --secondary-foreground: 0 0% 98%; /* Light text for secondary */
+
+    --muted: 220 10% 90%; /* Lighter gray for muted elements */
+    --muted-foreground: 220 8% 45%; /* Darker gray for muted text */
+
+    --accent: 190 80% 55%; /* Lighter Teal/Cyan for accents */
+    --accent-foreground: 240 10% 3.9%;
+
+    --destructive: 0 70% 55%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 88%; /* Softer border color */
+    --input: 220 15% 85%;  /* Slightly darker for input borders */
+    --ring: 175 75% 55%; /* Teal for focus rings */
+
+    --radius: 0.75rem; /* Global border radius - can adjust */
+  }
+
+  .dark {
+    /* Define your dark theme colors here if you plan to support it */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    /* ... other dark theme variables ... */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1; /* Shadcn default */
+  }
+}
+
+/* Keep your custom section-anchor */
+.section-anchor {
+  display: block;
+  position: relative;
+  top: -80px; /* Adjust based on your navbar height */
+  visibility: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}

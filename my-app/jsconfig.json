@@ -1,0 +1,11 @@
+// jsconfig.json
+{
+  "compilerOptions": {
+    "baseUrl": ".", // Sets the base directory for resolving non-relative module names
+    "paths": {
+      "@/*": ["./src/*"] // Defines the alias: "@/" maps to "./src/"
+    },
+    "jsx": "react-jsx" // Ensures JSX is understood correctly by your editor
+  },
+  "include": ["src"] // Specifies which files are part of your project
+}
